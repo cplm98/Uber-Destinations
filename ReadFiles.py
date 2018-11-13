@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 def create_graph():
     adj_mat = np.loadtxt(r'C:\Users\Connor Moore\Desktop\365 Project Uber\Code\base_files\network.csv', delimiter=',')
-    graph_ = nx.from_numpy_matrix(adj_mat)
+    graph_ = nx.from_numpy_matrix(adj_mat, create_using=nx.MultiGraph)
     return graph_
 
 # This just prints the graph
@@ -12,7 +12,7 @@ def create_graph():
 G = create_graph()
 print("edges in g: ", G.edges(data=True))
 print(nx.number_of_nodes(G))
-#nx.draw(G)
-#plt.show()
+nx.draw(G)
+plt.show()
 
 
